@@ -1,6 +1,7 @@
 import asyncio
 import logging
 import os
+from aiohttp import web
 from dotenv import load_dotenv
 
 from aiogram import Bot, Dispatcher
@@ -10,6 +11,7 @@ from handlers.admin import router as admin_router
 from handlers.user import router as user_router
 from handlers.sniper import router as sniper_router
 from handlers.cards import router as cards_router
+
 from support import router as support_router
 from handlers.reviews import router as reviews_router
 from handlers.calculator import router as calculator_router
@@ -45,7 +47,21 @@ dp.include_router(evaluator_h_router)
 dp.include_router(user_router)
 
 
+async def handle_healthcheck(request):
+    return web.Response(text="Bot is active 24/7!")
+
+async def start_health_server():
+    app = web.Application()
+    app.router.add_get("/", handle_healthcheck)
+    runner = web.AppRunner(app)
+    await runner.setup()
+    port = int(os.getenv("PORT", 8080))
+    site = web.TCPSite(runner, "0.0.0.0", port)
+    await site.start()
+
+
 async def main():
+    await start_health_server()
     logging.basicConfig(level=logging.INFO)
     await db_main()
     print("🚀 Бот запущен!")
