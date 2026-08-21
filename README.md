@@ -1,27 +1,37 @@
-# Clothing Bot (or your custom name)
+# 🛒 E-Commerce Market Sniper & Monitoring Service
 
-A high-performance Telegram bot designed for automated clothing market monitoring. Built with asynchronous Python and PostgreSQL.
+A high-performance, asynchronous Telegram bot engineered for real-time automated monitoring of clothing market listings. Built with Python and PostgreSQL to ensure rapid data extraction and persistent storage.
 
-## 🚀 Features
-- **Real-time Monitoring:** Tracks market price changes instantly.
-- **Advanced Sniper:** Automatically detects new deals and opportunities.
-- **Database-driven:** Persistent storage for user preferences and history.
-- **Deployment-ready:** Fully containerized and optimized for 24/7 uptime.
+### 💼 Business Value
+Tracking market deals manually is slow and inefficient, causing buyers and resellers to miss out on profitable opportunities. This bot acts as a real-time sniper, instantly detecting new listings and price drops, delivering them directly to the user's workflow.
 
-## 🛠 Tech Stack
-- **Language:** Python 3.12
-- **Framework:** `aiogram` (Asynchronous Telegram framework)
-- **Database:** PostgreSQL (via SQLAlchemy + asyncpg)
-- **Deployment:** Render (with UptimeRobot for 24/7 reliability)
+### 🚀 Key Features
+* **Real-time Monitoring:** Asynchronous architecture tracks market price fluctuations instantly.
+* **Advanced Sniper Logic:** Automatically detects new deals, filtering out irrelevant noise.
+* **Persistent Storage:** Utilizes PostgreSQL via asyncpg for secure, fast storage of user preferences and search history.
+* **Production-Ready:** Fully containerized, optimized for 24/7 high-availability deployment.
 
-## 📋 Getting Started
-1. Clone the repository: `git clone https://github.com/yourusername/your-repo-name.git`
-2. Install dependencies: `pip install -r requirements.txt`
-3. Configure your `.env` file with `BOT_TOKEN`, `ADMIN_ID`, and `DATABASE_URL`.
-4. Run the bot: `python main.py`
+### 🛠 Tech Stack
+* **Core:** Python 3.12, aiogram 3.x (Asyncio)
+* **Database:** PostgreSQL (SQLAlchemy + asyncpg)
+* **Deployment:** Render (integrated with UptimeRobot for 24/7 reliability)
 
-## 🛡 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+### 📋 Getting Started
 
----
-*Created by [Your Name] | Built for scalable market analytics.*
+1. Clone the repository: 
+   ```bash
+   git clone [https://github.com/yourusername/your-repo-name.git](https://github.com/yourusername/your-repo-name.git)
+Install dependencies:
+
+Bash
+pip install -r requirements.txt
+Configure your .env file:
+
+
+BOT_TOKEN=your_token
+ADMIN_ID=your_id
+DATABASE_URL=postgresql+asyncpg://user:password@localhost/dbname
+Run the application:
+
+Bash
+python main.py
